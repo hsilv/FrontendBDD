@@ -7,6 +7,15 @@ const token = localStorage.getItem("jwt");
 
 fadeAlert();
 
+const ip = "http://50.16.178.129:3000/";
+
+if ((await checkLogin()) == "0") {
+  window.location.href = "../home/home.html";
+} else {
+  fadeAlert();
+  showAlert("Tu sesión expiró, por favor, inicia sesión de nuevo");
+}
+
 button.addEventListener("click", () => {
   fadeAlert();
   const data = {
@@ -16,7 +25,7 @@ button.addEventListener("click", () => {
   if (email.value == "" || password.value == "") {
     showAlert("Por favor, agrega un usuario o contraseña ");
   } else {
-    fetch("http://localhost:3000/login", {
+    fetch(ip + "login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
@@ -28,6 +37,7 @@ button.addEventListener("click", () => {
         if (data.code == 0) {
           console.log("Autenticación válida");
           localStorage.setItem("jwt", data.token);
+          window.location.href = "../home/home.html";
         } else {
           showAlert("Usuario o Contraseña incorrectos");
         }
@@ -48,3 +58,19 @@ function showAlert(text) {
 function fadeAlert() {
   alert.style.display = "none";
 }
+
+export async function checkLogin() {
+  return fetch(ip + "checkLog", {
+    method: "POST",
+    headers: {
+      Authorization: localStorage.getItem("jwt"),
+    },
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      console.log(data);
+      return data;
+    })
+    .catch((err) => console.log(err));
+}
+

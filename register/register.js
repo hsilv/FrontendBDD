@@ -12,19 +12,21 @@ const passwordInput = document.getElementById("inputPassword");
 const passwordInputRe = document.getElementById("inputPasswordRe");
 
 var isUser = false;
+const ip = "http://50.16.178.129:3000/"
 
 fadeAlert();
 button.addEventListener("click", async () => {
   if ((await checkCredentials()) && checkPasswords()) {
     fadeAlert();
     await registerUser();
+    window.location.href = '../login/login.html';
   }
 });
 
 addSpecialties();
 
 function addSpecialties() {
-  fetch("http://localhost:3000/specialties", {
+  fetch(ip+"specialties", {
     method: "GET",
   })
     .then((response) => response.json())
@@ -40,7 +42,7 @@ function addSpecialties() {
 }
 
 async function iterUsers() {
-  return fetch("http://localhost:3000/users", {
+  return fetch(ip+"users", {
     method: "GET",
   })
     .then((response) => response.json())
@@ -69,7 +71,7 @@ async function registerUser() {
     username: userInput.value,
     password: passwordInput.value,
   };
-  fetch("http://localhost:3000/register", {
+  fetch(ip+"register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=UTF-8",
