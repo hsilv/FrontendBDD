@@ -69,5 +69,69 @@
             Inventario
         </h1> 
     </div>
+
+    <div class="conteiner-inventory"></div>
+    
+    <div class="container-fluid" id="content-container">
+        <div class="row">
+            <div class="col-3 d-flex justify-content-center card-container">
+                <div class="card d-flex align-items-center">
+                    <img class="card-img-top" alt="Foto Doctor" id="card-prof-pic" />
+                    <div class="container-fluid">
+                        <div class="card-body d-flex flex-column">
+                            <h2 class="card-title">Doctor</h2>
+                            <h5 class="card-text">Nombre</h5>
+                            <p class="card-text" id="doctorName">-</p>
+                            <h5 class="card-text">Especialidad</h5>
+                            <p class="card-text" id="specialty">-</p>
+                            <h5 class="card-text">Dirección</h5>
+                            <p class="card-text" id="address">-</p>
+                            <h5 class="card-text">Número de teléfono</h5>
+                            <p class="card-text" id="phone">-</p>
+                            <h5 class="card-text">Número de colegiado</h5>
+                            <p class="card-text" id="colegiate">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="mb-3 container-fluid d-flex align-items-center justify-content-end">
+                    <div class="col-11 d-flex align-items-center justify-content-start">
+                        <h4>Estos son tus pacientes</h4>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-end">
+                        <button type="button" class="btn btn-primary" id="agregarPaciente" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            +
+                        </button>
+                        <!-- Modal -->
+
+                        <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Tienes un nuevo paciente?</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Registrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+               
+            </div>
+        </div>
+    </div>
 </body>
 </html>
