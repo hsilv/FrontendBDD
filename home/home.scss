@@ -2,6 +2,8 @@ $navbar-light-active-color: white;
 $navbar-light-color: rgba(255, 255, 255, 0.582);
 $navbar-light-hover-color: white;
 $primary: #133c63;
+$home-heading-color: red;
+
 
 
 @import "../node_modules/bootstrap/scss/bootstrap";
@@ -11,7 +13,6 @@ $primary: #133c63;
 $--bs-navbar-active-color: white;
 $--bs-body-color: blue;
 */
-
 .navbar{
     img{
         max-height: 50px;
@@ -19,6 +20,7 @@ $--bs-body-color: blue;
     #profile-image{
         margin-left: 2vw;
     }
-
 }
+
+
 
