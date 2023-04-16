@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expediente</title>
+    <link rel="stylesheet" href="exp.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-primary mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../resource/img/hospital_logo.svg" alt="Medkit Logo" />
+                MedKit
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../home/home.html">Pacientes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../inventory/inventory.html">Inventario</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Expedientes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Centro Médico</a>
+                    </li>
+                </ul>
+
+                <button type="button" class="btn btn-primary" id="submitButton">
+                    Cerrar Sesión
+                </button>
+                <div class="d-flex" id="profile-image" role="profile">
+                    <a class="profile" href="#">
+                        <img alt="Doctor Profile" id="profile-pic" src="../resource/img/doctor.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid" id="content-container">
+        <div class="row">
+            <div class="col-3 d-flex justify-content-center card-container">
+                <div class="card d-flex align-items-center">
+                    <div class="container-fluid">
+                        <div class="card-body d-flex flex-column">
+                            <h2 class="card-title">Paciente</h2>
+                            <h5 class="card-text">ID Expediente</h5>
+                            <p class="card-text" id="patientID">-</p>
+                            <h5 class="card-text">Nombre</h5>
+                            <p class="card-text" id="patientName">-</p>
+                            <h5 class="card-text">Edad</h5>
+                            <p class="card-text" id="patientAge">-</p>
+                            <h5 class="card-text">Género</h5>
+                            <p class="card-text" id="patientGenre">-</p>
+                            <h5 class="card-text">Altura</h5>
+                            <p class="card-text" id="patientHeight">-</p>
+                            <h5 class="card-text">Peso</h5>
+                            <p class="card-text" id="patientWeight">-</p>
+                            <h5 class="card-text">Índice de masa corporal</h5>
+                            <p class="card-text" id="patientBody">-</p>
+                            <h5 class="card-text">Dirección</h5>
+                            <p class="card-text" id="patientAddress">-</p>
+                            <h5 class="card-text">Teléfono</h5>
+                            <p class="card-text" id="patientPhone">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="exp.js" type="module"></script>
+</body>
+
+</html>

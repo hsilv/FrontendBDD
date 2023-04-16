@@ -11905,10 +11905,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/*$primary: $cyan-800;
-$--bs-navbar-active-color: white;
-$--bs-body-color: blue;
-*/
 .navbar img {
   max-height: 50px;
 }
@@ -11916,66 +11912,4 @@ $--bs-body-color: blue;
   margin-left: 2vw;
 }
 
-#content-container {
-  max-height: 710px;
-}
-#content-container img {
-  padding: 10px;
-  max-width: 95%;
-}
-
-.row {
-  max-height: 875px;
-}
-.row div {
-  max-height: 875px;
-}
-.row .table-responsive {
-  height: 775px;
-  max-height: 775px;
-  margin-inline: 15px;
-}
-
-.card {
-  margin-bottom: 40px;
-  max-height: 710px;
-}
-
-.table-container {
-  max-height: 20px;
-}
-
-.intro {
-  height: 100%;
-}
-
-table td,
-table th {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-table td button,
-table th button {
-  max-height: fit-content;
-}
-table td button img,
-table th button img {
-  max-height: 50px;
-}
-
-.card {
-  border-radius: 0.5rem;
-}
-
-.table-scroll {
-  border-radius: 0.5rem;
-  max-height: 80%;
-}
-
-thead {
-  top: 0;
-  position: sticky;
-}
-
-/*# sourceMappingURL=home.css.map */
+/*# sourceMappingURL=exp.css.map */
