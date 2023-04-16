@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css" />
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-md bg-primary">
+    <nav class="navbar navbar-expand-md bg-primary mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="../resource/img/hospital_logo.svg" alt="Medkit Logo">
+                <img src="../resource/img/hospital_logo.svg" alt="Medkit Logo" />
                 MedKit
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbar">
-
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Pacientes</a>
                     </li>
 
                     <li class="nav-item">
@@ -31,32 +32,103 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Pacientes</a>
-                    </li>
-
-                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">Centro Médico</a>
                     </li>
-                    
                 </ul>
 
-                <button type="button" class="btn btn-primary" id="submitButton">Cerrar Sesión</button>
+                <button type="button" class="btn btn-primary" id="submitButton">
+                    Cerrar Sesión
+                </button>
                 <div class="d-flex" id="profile-image" role="profile">
                     <a class="profile" href="#">
-                        <img src="../resource/img/doctor.png" alt="Doctor Profile">
+                        <img src="../resource/img/doctor.png" alt="Doctor Profile" />
                     </a>
                 </div>
-
             </div>
-
         </div>
     </nav>
 
-    <div class="container-fluid">
-        <h1 class="home-title d-flex justify-content-center">Bienvenido, usuario!</h1>
+    <div class="container-fluid mb-5">
+        <h1 class="home-title d-flex justify-content-center" id="welcomeUser">
+            Bienvenido, usuario!
+        </h1>
     </div>
 
+    <div class="container-fluid" id="content-container">
+        <div class="row">
+            <div class="col-3 d-flex justify-content-center card-container">
+                <div class="card d-flex align-items-center">
+                    <img src="../resource/img/doctor.png" class="card-img-top" alt="Foto Doctor" />
+                    <div class="container-fluid">
+                        <div class="card-body d-flex flex-column">
+                            <h2 class="card-title">Doctor</h2>
+                            <h5 class="card-text">Nombre</h5>
+                            <p class="card-text" id="doctorName">-</p>
+                            <h5 class="card-text">Especialidad</h5>
+                            <p class="card-text" id="specialty">-</p>
+                            <h5 class="card-text">Dirección</h5>
+                            <p class="card-text" id="address">-</p>
+                            <h5 class="card-text">Número de teléfono</h5>
+                            <p class="card-text" id="phone">-</p>
+                            <h5 class="card-text">Número de colegiado</h5>
+                            <p class="card-text" id="colegiate">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="mb-3 container-fluid d-flex align-items-center justify-content-end">
+                    <div class="col-11 d-flex align-items-center justify-content-start">
+                        <h4>Estos son tus pacientes</h4>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-end">
+                        <button type="button" class="btn btn-primary" id="agregarPaciente">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true">
+                    <table class="table table-light mb-0">
+                        <thead style="background-color: white">
+                            <tr class="text-uppercase">
+                                <th scope="col">Class name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Hours</th>
+                                <th scope="col">Trainer</th>
+                                <th scope="col">Spots</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Like a butterflies</td>
+                                <td>Boxing</td>
+                                <td>9:00 AM - 11:00 AM</td>
+                                <td>Aaron Chapman</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>Mind &amp; Body</td>
+                                <td>Yoga</td>
+                                <td>8:00 AM - 9:00 AM</td>
+                                <td>Adam Stewart</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>Mind &amp; Body</td>
+                                <td>Yoga</td>
+                                <td>8:00 AM - 9:00 AM</td>
+                                <td>Adam Stewart</td>
+                                <td>15</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="home.js" type="module"></script>
 </body>
+
 </html>

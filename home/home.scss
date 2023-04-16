@@ -3,6 +3,10 @@ $navbar-light-color: rgba(255, 255, 255, 0.582);
 $navbar-light-hover-color: white;
 $primary: #133c63;
 
+tbody{
+    max-height: 10px !important;
+    overflow-y: auto !important;
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/bootstrap/scss/variables";
@@ -21,4 +25,59 @@ $--bs-body-color: blue;
     }
 
 }
+
+
+#content-container{
+    max-height: 710px;
+    img{
+        padding: 10px;
+        max-width: 95%;
+    }
+}
+
+.row{
+    max-height: 875px;
+    div{
+        max-height: 875px;
+    }
+    .table-responsive{
+        height: 775px;
+        max-height: 775px;
+        margin-inline: 15px;
+    }
+}
+.card{
+    margin-bottom: 40px;
+    max-height: 710px;
+}
+
+.table-container{
+    max-height: 20px;
+}
+
+.intro {
+    height: 100%;
+  }
+  
+  table td,
+  table th {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .card {
+    border-radius: .5rem;
+  }
+  
+  .table-scroll {
+    border-radius: .5rem;
+    max-height: 80%;
+  }
+  
+  thead {
+    top: 0;
+    position: sticky;
+  }
+
 
