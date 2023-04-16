@@ -11905,11 +11905,59 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/*$primary: $cyan-800;
+$--bs-navbar-active-color: white;
+$--bs-body-color: blue;
+*/
+.row .col-3 {
+  max-height: 710px;
+}
+
 .navbar img {
   max-height: 50px;
 }
 .navbar #profile-image {
   margin-left: 2vw;
+}
+
+.table-container {
+  max-height: 650px;
+}
+.table-container div {
+  max-height: 650px;
+}
+.table-container .table-responsive {
+  max-height: 650px;
+  margin-inline: 0px;
+}
+
+.intro {
+  height: 100%;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+table td button,
+table th button {
+  max-height: fit-content;
+}
+table td button img,
+table th button img {
+  max-height: 50px;
+}
+
+.table-scroll {
+  border-radius: 0.5rem;
+  max-height: 80%;
+}
+
+thead {
+  top: 0;
+  position: sticky;
 }
 
 /*# sourceMappingURL=exp.css.map */

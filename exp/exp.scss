@@ -11,6 +11,17 @@ tbody{
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/bootstrap/scss/variables";
 
+/*$primary: $cyan-800;
+$--bs-navbar-active-color: white;
+$--bs-body-color: blue;
+*/
+
+.row{
+    .col-3{
+        max-height: 710px;
+    }
+}
+
 .navbar{
     img{
         max-height: 50px;
@@ -20,3 +31,41 @@ tbody{
     }
 
 }
+
+.table-container{
+    max-height: 650px;
+    div{
+        max-height: 650px;
+    }
+    .table-responsive{
+        max-height: 650px;
+        margin-inline: 0px;
+    }
+}
+
+.intro {
+    height: 100%;
+  }
+  
+  table td,
+  table th {
+    button{
+        max-height: fit-content;
+        img{
+            max-height: 50px;
+        }
+      }
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .table-scroll {
+    border-radius: .5rem;
+    max-height: 80%;
+  }
+  
+  thead {
+    top: 0;
+    position: sticky;
+  }
