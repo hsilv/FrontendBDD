@@ -37,6 +37,7 @@ button.addEventListener("click", () => {
         if (data.code == 0) {
           console.log("Autenticación válida");
           localStorage.setItem("jwt", data.token);
+          localStorage.setItem("medUser", email.value);
           window.location.href = "../home/home.html";
         } else {
           showAlert("Usuario o Contraseña incorrectos");

@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css" />
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-md bg-primary">
+    <nav class="navbar navbar-expand-md bg-primary mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="../resource/img/hospital_logo.svg" alt="Medkit Logo">
+                <img src="../resource/img/hospital_logo.svg" alt="Medkit Logo" />
                 MedKit
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbar">
-
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../home/home.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Pacientes</a>
                     </li>
 
                     <li class="nav-item">
@@ -33,35 +34,109 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="../record/record.html">Expedientes</a>
                     </li>
-                    
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Centro Médico</a>
+                    </li>
                 </ul>
 
+                <button type="button" class="btn btn-primary" id="submitButton">
+                    Cerrar Sesión
+                </button>
                 <div class="d-flex" id="profile-image" role="profile">
                     <a class="profile" href="#">
-                        <img src="../resource/img/doctor.png" alt="Doctor Profile">
+                        <img alt="Doctor Profile" id="profile-pic" />
                     </a>
                 </div>
-
             </div>
-
         </div>
     </nav>
 
-    <section class = "home" id="home">
-        <div class="content">
-            <h3>El Ministerio de Salud habilita la 4ta dosis de la vacuna contra COVID-19 para grupos priorizados</h3>
-            <span>por Ministerio de Salud Pública y Asistencia Social  8 de abril de 2022</span>
-            <p>El Ministerio de Salud Pública y Asistencia Social -MSPAS- emite su séptima adenda al Plan Nacional de Vacunación contra COVID-19 a través de su legalización publicada en el Diario Oficial de Centroamérica.
-               Este documento habilita la administración de la cuarta dosis de la vacuna contra el COVID-19 para todo el personal sanitario, 
-               personas de 50 años en adelante sin excepciones y población de 12 años en adelante con enfermedades crónicas o inmunosupresión. 
-               Estas acciones son implementadas con el objetivo de velar por la protección de los sectores poblacionales considerados como grupos con mayor vulnerabilidad ante la enfermedad por COVID-19.
-            </p>
-            <a href="https://guatemala.gob.gt/el-ministerio-de-salud-habilita-la-4ta-dosis-de-la-vacuna-contra-covid-19-para-grupos-priorizados/" class="btn">Leer más</a>
+    <div class="container-fluid mb-5">
+        <h1 class="home-title d-flex justify-content-center" id="welcomeUser">
+            Bienvenido, usuario!
+        </h1>
+    </div>
+
+    <div class="container-fluid" id="content-container">
+        <div class="row">
+            <div class="col-3 d-flex justify-content-center card-container">
+                <div class="card d-flex align-items-center">
+                    <img class="card-img-top" alt="Foto Doctor" id="card-prof-pic" />
+                    <div class="container-fluid">
+                        <div class="card-body d-flex flex-column">
+                            <h2 class="card-title">Doctor</h2>
+                            <h5 class="card-text">Nombre</h5>
+                            <p class="card-text" id="doctorName">-</p>
+                            <h5 class="card-text">Especialidad</h5>
+                            <p class="card-text" id="specialty">-</p>
+                            <h5 class="card-text">Dirección</h5>
+                            <p class="card-text" id="address">-</p>
+                            <h5 class="card-text">Número de teléfono</h5>
+                            <p class="card-text" id="phone">-</p>
+                            <h5 class="card-text">Número de colegiado</h5>
+                            <p class="card-text" id="colegiate">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="mb-3 container-fluid d-flex align-items-center justify-content-end">
+                    <div class="col-11 d-flex align-items-center justify-content-start">
+                        <h4>Estos son tus pacientes</h4>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-end">
+                        <button type="button" class="btn btn-primary" id="agregarPaciente" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            +
+                        </button>
+                        <!-- Modal -->
+
+                        <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Tienes un nuevo paciente?</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Registrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true">
+                    <table class="table table-light mb-0">
+                        <thead style="background-color: white">
+                            <tr class="text-uppercase">
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Evolución</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Género</th>
+                                <th scope="col">Edad</th>
+                                <th scope="col">Expediente</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
-
-
-    <button type="button" class="btn btn-primary" id="submitButton">Cerrar Sesión</button>
+    <script src="home.js" type="module"></script>
 </body>
+
 </html>
