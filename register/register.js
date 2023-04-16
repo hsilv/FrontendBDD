@@ -10,9 +10,10 @@ const specialtyInput = document.getElementById("specialtyInput");
 const colegiateInput = document.getElementById("inputColegiate");
 const passwordInput = document.getElementById("inputPassword");
 const passwordInputRe = document.getElementById("inputPasswordRe");
+const genreInput = document.getElementById("genreInput");
 
 var isUser = false;
-const ip = "http://50.16.178.129:3000/"
+const ip = "http://127.0.0.1:3000/"
 
 fadeAlert();
 button.addEventListener("click", async () => {
@@ -70,6 +71,7 @@ async function registerUser() {
     speciality: specialtyInput.value,
     username: userInput.value,
     password: passwordInput.value,
+    genre: genreInput.value,
   };
   fetch(ip+"register", {
     method: "POST",
@@ -108,6 +110,16 @@ function checkSpecialty() {
   }
 }
 
+function checkGenre() {
+  if (genreInput.value === "Elige tu género") {
+    fadeAlert();
+    showAlert("Por favor, elige un género");
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function checkAttr(attr, name) {
   if (attr.value == undefined || attr.value == null || attr.value == "") {
     fadeAlert();
@@ -117,6 +129,8 @@ function checkAttr(attr, name) {
     return true;
   }
 }
+
+
 
 function checkPasswords() {
   if (passwordInput.value === passwordInputRe.value) {
@@ -131,6 +145,9 @@ function checkPasswords() {
 async function checkCredentials() {
   var cant = 0;
   if (!checkSpecialty()) {
+    cant++;
+  }
+  if (!checkGenre()) {
     cant++;
   }
   if (!checkAttr(phoneInput, "Número de teléfono")) {

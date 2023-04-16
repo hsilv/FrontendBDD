@@ -75,7 +75,7 @@ async function initUI() {
     })
     .catch((err) => console.log(err));
 
-  await fetch(ip+"getSpecialty", {
+  fetch(ip+"getSpecialty", {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=UTF-8",
@@ -89,7 +89,7 @@ async function initUI() {
     .catch((err) => console.log(err));
 
 
-    await fetch(ip+"getPatients", {
+    fetch(ip+"getPatients", {
       method: "POST",
       headers: {
         Authorization: localStorage.getItem("jwt"),
