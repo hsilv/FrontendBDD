@@ -1,0 +1,27 @@
+$navbar-light-active-color: white;
+$navbar-light-color: rgba(255, 255, 255, 0.582);
+$navbar-light-hover-color: white;
+$primary: #133c63;
+
+tbody{
+    max-height: 10px !important;
+    overflow-y: auto !important;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/variables";
+
+/*$primary: $cyan-800;
+$--bs-navbar-active-color: white;
+$--bs-body-color: blue;
+*/
+
+.navbar{
+    img{
+        max-height: 50px;
+    }
+    #profile-image{
+        margin-left: 2vw;
+    }
+
+}
