@@ -102,15 +102,19 @@ async function initUI() {
         data.forEach(function (item, index, array){
           const tr = document.createElement('tr');
           const ID = document.createElement('td');
+          ID.classList.add('align-middle');
           ID.innerHTML = item.id_patient;
           tr.appendChild(ID);
           const NAME = document.createElement('td');
+          NAME.classList.add('align-middle');
           NAME.innerHTML = item.patient_name;
           tr.appendChild(NAME);
           const EVOL = document.createElement('td');
+          EVOL.classList.add('align-middle');
           EVOL.innerHTML = item.patient_evolution;
           tr.appendChild(EVOL);
           const STATE = document.createElement('td');
+          STATE.classList.add('align-middle');
           if(item.patient_alive){
             STATE.innerHTML = 'Vivo';
           }else{
@@ -118,6 +122,7 @@ async function initUI() {
           }
           tr.appendChild(STATE);
           const GENRE = document.createElement('td');
+          GENRE.classList.add('align-middle');
           if(item.genre){
             GENRE.innerHTML = 'Masculino';
           }else{
@@ -125,10 +130,32 @@ async function initUI() {
           }
           tr.appendChild(GENRE);
           const AGE = document.createElement('td');
+          AGE.classList.add('align-middle');
           AGE.innerHTML = item.age;
           tr.appendChild(AGE);
+          const buttCont = document.createElement('td');
+          const BUTTON = document.createElement('button');
+          const imgBUTTON = document.createElement('img');
+          imgBUTTON.alt = "View Icon";
+          imgBUTTON.src = "../resource/img/search.png";
+          BUTTON.appendChild(imgBUTTON);
+          BUTTON.type = "button";
+          BUTTON.classList.add('btn');
+          BUTTON.classList.add('btn-light');
+          BUTTON.id = 'exp-'+item.id_patient;
+          buttCont.appendChild(BUTTON);
+          buttCont.classList.add('align-middle');
+          addListener(BUTTON, item.id_patient);
+          tr.appendChild(buttCont);
           tabla.appendChild(tr);
         })
       })
       .catch((err) => console.log(err));
+}
+
+function addListener(item, ID){
+  item.addEventListener("click", () => {
+    console.log("botón clickeado con ID "+ID);
+    window.location.href = `../exp/exp.html?ID=${ID}`
+  })
 }

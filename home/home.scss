@@ -61,6 +61,12 @@ $--bs-body-color: blue;
   
   table td,
   table th {
+    button{
+        max-height: fit-content;
+        img{
+            max-height: 50px;
+        }
+      }
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -79,5 +85,4 @@ $--bs-body-color: blue;
     top: 0;
     position: sticky;
   }
-
 
