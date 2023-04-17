@@ -297,56 +297,57 @@ fetch(ip + "getPrescs", {
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    if(data.length == 0){
+    if (data.length == 0) {
       const row = document.createElement("tr");
       const tdata = document.createElement("td");
       tdata.setAttribute("colspan", "8");
       tdata.innerHTML = "Aún no se le ha recetado medicina a este paciente";
       row.appendChild(tdata);
       tablePrescs.appendChild(row);
-    }else{
-    data.forEach(function (item, index, array) {
-      const row = document.createElement("tr");
-      const ID = document.createElement("td");
-      ID.classList.add("align-middle");
-      ID.innerHTML = item.id_prescription;
-      row.appendChild(ID);
-      const TYPE = document.createElement("td");
-      TYPE.classList.add("align-middle");
-      TYPE.innerHTML = item.medicine_name;
-      row.appendChild(TYPE);
-      const AMMOUNT = document.createElement("td");
-      AMMOUNT.classList.add("align-middle");
-      AMMOUNT.innerHTML = item.amount;
-      row.appendChild(AMMOUNT);
+    } else {
+      data.forEach(function (item, index, array) {
+        const row = document.createElement("tr");
+        const ID = document.createElement("td");
+        ID.classList.add("align-middle");
+        ID.innerHTML = item.id_prescription;
+        row.appendChild(ID);
+        const TYPE = document.createElement("td");
+        TYPE.classList.add("align-middle");
+        TYPE.innerHTML = item.medicine_name;
+        row.appendChild(TYPE);
+        const AMMOUNT = document.createElement("td");
+        AMMOUNT.classList.add("align-middle");
+        AMMOUNT.innerHTML = item.amount;
+        row.appendChild(AMMOUNT);
 
-      const EVOL = document.createElement("td");
-      EVOL.classList.add("align-middle");
-      EVOL.innerHTML = item.patient_status;
-      row.appendChild(EVOL);
+        const EVOL = document.createElement("td");
+        EVOL.classList.add("align-middle");
+        EVOL.innerHTML = item.patient_status;
+        row.appendChild(EVOL);
 
-      const STATE = document.createElement("td");
-      STATE.classList.add("align-middle");
-      if (item.patient_alive) {
-        STATE.innerHTML = "Alive";
-      } else {
-        STATE.innerHTML = "Dead";
-      }
-      row.appendChild(STATE);
+        const STATE = document.createElement("td");
+        STATE.classList.add("align-middle");
+        if (item.patient_alive) {
+          STATE.innerHTML = "Alive";
+        } else {
+          STATE.innerHTML = "Dead";
+        }
+        row.appendChild(STATE);
 
-      const DATE = document.createElement("td");
-      DATE.classList.add("align-middle");
-      DATE.innerHTML = item.date_given.substr(0, 10);
-      row.appendChild(DATE);
-      const MEDIC = document.createElement("td");
-      MEDIC.classList.add("align-middle");
-      MEDIC.innerHTML = item.doctor_name;
-      row.appendChild(MEDIC);
-      const CENTER = document.createElement("td");
-      CENTER.classList.add("align-middle");
-      CENTER.innerHTML = item.center_name;
-      row.appendChild(CENTER);
-      tablePrescs.appendChild(row);
-    });}
+        const DATE = document.createElement("td");
+        DATE.classList.add("align-middle");
+        DATE.innerHTML = item.date_given.substr(0, 10);
+        row.appendChild(DATE);
+        const MEDIC = document.createElement("td");
+        MEDIC.classList.add("align-middle");
+        MEDIC.innerHTML = item.doctor_name;
+        row.appendChild(MEDIC);
+        const CENTER = document.createElement("td");
+        CENTER.classList.add("align-middle");
+        CENTER.innerHTML = item.center_name;
+        row.appendChild(CENTER);
+        tablePrescs.appendChild(row);
+      });
+    }
   })
   .catch((err) => console.log(err));

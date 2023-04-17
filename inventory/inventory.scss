@@ -3,6 +3,10 @@ $navbar-light-color: rgba(255, 255, 255, 0.582);
 $navbar-light-hover-color: white;
 $primary: #133c63;
 
+tbody{
+    max-height: 10px !important;
+    overflow-y: auto !important;
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/bootstrap/scss/variables";
@@ -12,6 +16,12 @@ $--bs-navbar-active-color: white;
 $--bs-body-color: blue;
 */
 
+.row{
+    .col-3{
+        max-height: 710px;
+    }
+}
+
 .navbar{
     img{
         max-height: 50px;
@@ -19,6 +29,44 @@ $--bs-body-color: blue;
     #profile-image{
         margin-left: 2vw;
     }
+
 }
 
+.table-container{
+    max-height: 650px;
+    div{
+        max-height: 650px;
+    }
+    .table-responsive{
+        max-height: 650px;
+        margin-inline: 0px;
+    }
+}
+
+.intro {
+    height: 100%;
+  }
+  
+  table td,
+  table th {
+    button{
+        max-height: fit-content;
+        img{
+            max-height: 30px;
+        }
+      }
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .table-scroll {
+    border-radius: .5rem;
+    max-height: 80%;
+  }
+  
+  thead {
+    top: 0;
+    position: sticky;
+  }
 
