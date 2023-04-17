@@ -6,8 +6,22 @@ const alert = document.getElementById("alert");
 console.log(localStorage.getItem("medUser"));
 const all = 350;
 const limit = new Date('2023-05-05');
+const medicalItem = document.getElementById('medical-center');
+var user1 = localStorage.getItem("medUser");
+const repoItem = document.getElementById('medical-repo');
+const logOut = document.getElementById("submitButton");
+
+logOut.addEventListener("click", () => {
+  localStorage.setItem("jwt", undefined);
+  window.location.href = "../login/login.html";
+});
 
 fadeAlert();
+
+if(!(await isAdmin())){
+  fadeItem(medicalItem);
+  fadeItem(repoItem);
+}
 
 const user = {
   id: localStorage.getItem("medUser"),
@@ -109,4 +123,33 @@ function showAlert(text) {
 
 function fadeAlert() {
   alert.style.display = "none";
+}
+
+async function isAdmin() {
+  const data = {
+    username: user1,
+  };
+  return fetch(ip + "isAdmin", {
+    method: "POST",
+    headers: {
+      Authorization: localStorage.getItem("jwt"),
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data[0].admin) {
+        console.log("Soy admin");
+        return true;
+      } else {
+        console.log("No soy admin");
+        return false;
+      }
+    })
+    .catch((err) => console.log(err));
+}
+
+function fadeItem(item) {
+  item.style.display = "none";
 }

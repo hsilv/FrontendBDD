@@ -18,11 +18,25 @@ const tableDocs = document.getElementById("table-med-team");
 const tableExams = document.getElementById("table-exams");
 const tableSurg = document.getElementById("table-surgery");
 const tablePrescs = document.getElementById("table-prescs");
+const medicalItem = document.getElementById('medical-center');
+var user = localStorage.getItem("medUser");
+const repoItem = document.getElementById('medical-repo');
+const logOut = document.getElementById("submitButton");
+
+logOut.addEventListener("click", () => {
+  localStorage.setItem("jwt", undefined);
+  window.location.href = "../login/login.html";
+});
 
 console.log(ID);
 const req = {
   id: ID,
 };
+
+if(!(await isAdmin())){
+  fadeItem(medicalItem);
+  fadeItem(repoItem);
+}
 
 fetch(ip + "getPatient", {
   method: "POST",
@@ -351,3 +365,32 @@ fetch(ip + "getPrescs", {
     }
   })
   .catch((err) => console.log(err));
+
+  async function isAdmin() {
+    const data = {
+      username: user,
+    };
+    return fetch(ip + "isAdmin", {
+      method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("jwt"),
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data[0].admin) {
+          console.log("Soy admin");
+          return true;
+        } else {
+          console.log("No soy admin");
+          return false;
+        }
+      })
+      .catch((err) => console.log(err));
+  }
+  
+  function fadeItem(item) {
+    item.style.display = "none";
+  }

@@ -11,6 +11,7 @@ const colegiateInput = document.getElementById("inputColegiate");
 const passwordInput = document.getElementById("inputPassword");
 const passwordInputRe = document.getElementById("inputPasswordRe");
 const genreInput = document.getElementById("genreInput");
+const centerInput = document.getElementById("centerInput");
 
 var isUser = false;
 const ip = "http://127.0.0.1:3000/"
@@ -25,6 +26,7 @@ button.addEventListener("click", async () => {
 });
 
 addSpecialties();
+addCenters();
 
 function addSpecialties() {
   fetch(ip+"specialties", {
@@ -37,6 +39,22 @@ function addSpecialties() {
         opt.value = item.id_specialty;
         opt.innerHTML = item.specialty_name;
         specialtyInput.appendChild(opt);
+      });
+    })
+    .catch((error) => console.log(error));
+}
+
+function addCenters(){
+fetch(ip+"getCenters", {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((item, index, array) => {
+        const opt = document.createElement("option");
+        opt.value = item.id_center;
+        opt.innerHTML = item.center_name;
+        centerInput.appendChild(opt);
       });
     })
     .catch((error) => console.log(error));
@@ -72,6 +90,7 @@ async function registerUser() {
     username: userInput.value,
     password: passwordInput.value,
     genre: genreInput.value,
+    center: centerInput.value,
   };
   fetch(ip+"register", {
     method: "POST",
@@ -120,6 +139,16 @@ function checkGenre() {
   }
 }
 
+function checkCenter() {
+  if (centerInput.value === "Elige tu centro médico") {
+    fadeAlert();
+    showAlert("Por favor, elige un centro médico");
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function checkAttr(attr, name) {
   if (attr.value == undefined || attr.value == null || attr.value == "") {
     fadeAlert();
@@ -148,6 +177,9 @@ async function checkCredentials() {
     cant++;
   }
   if (!checkGenre()) {
+    cant++;
+  }
+  if (!checkCenter()) {
     cant++;
   }
   if (!checkAttr(phoneInput, "Número de teléfono")) {
