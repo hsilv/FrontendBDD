@@ -13,7 +13,7 @@ const passwordInputRe = document.getElementById("inputPasswordRe");
 const genreInput = document.getElementById("genreInput");
 
 var isUser = false;
-const ip = "http://50.16.178.129:3000/"
+const ip = "http://127.0.0.1:3000/"
 
 fadeAlert();
 button.addEventListener("click", async () => {

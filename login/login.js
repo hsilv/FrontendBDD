@@ -7,7 +7,7 @@ const token = localStorage.getItem("jwt");
 
 fadeAlert();
 
-const ip = "http://50.16.178.129:3000/";
+const ip = "http://127.0.0.1:3000/";
 
 if ((await checkLogin()) == "0") {
   window.location.href = "../home/home.html";

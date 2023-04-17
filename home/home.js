@@ -1,5 +1,5 @@
 import "../node_modules/bootstrap/dist/js/bootstrap.js";
-const ip = "http://50.16.178.129:3000/";
+const ip = "http://127.0.0.1:3000/";
 
 const logOut = document.getElementById("submitButton");
 var code = parseInt(await checkLogin());
@@ -99,6 +99,7 @@ async function initUI() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         data.forEach(function (item, index, array){
           const tr = document.createElement('tr');
           const ID = document.createElement('td');
@@ -111,7 +112,7 @@ async function initUI() {
           tr.appendChild(NAME);
           const EVOL = document.createElement('td');
           EVOL.classList.add('align-middle');
-          EVOL.innerHTML = item.patient_evolution;
+          EVOL.innerHTML = item.patient_status;
           tr.appendChild(EVOL);
           const STATE = document.createElement('td');
           STATE.classList.add('align-middle');
