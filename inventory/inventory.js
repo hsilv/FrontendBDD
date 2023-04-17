@@ -1,5 +1,5 @@
 import "../node_modules/bootstrap/dist/js/bootstrap.js";
-const ip = "http://127.0.0.1:3000/";
+const ip = "http://50.16.178.129:3000/";
 const medicTitle = document.getElementById("medicalName");
 const tableBody = document.getElementById("table-body");
 
