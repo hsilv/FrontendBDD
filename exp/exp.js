@@ -1,7 +1,7 @@
 import "../node_modules/bootstrap/dist/js/bootstrap.js";
 const params = new URLSearchParams(window.location.search);
 const ID = params.get("ID");
-const ip = "http://127.0.0.1:3000/";
+const ip = "http://50.16.178.129:3000/";
 const patientID = document.getElementById("patientID");
 const patientName = document.getElementById("patientName");
 const patientAge = document.getElementById("patientAge");
